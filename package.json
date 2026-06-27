@@ -7,10 +7,10 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
@@ -19,7 +19,7 @@
     "test:e2e": "node --experimental-transform-types --experimental-test-module-mocks --test \"src/**/*.e2e.test.ts\"",
     "test": "node --experimental-transform-types --experimental-test-module-mocks --test \"src/**/*.test.ts\"",
     "check": "npm run typecheck && npm run lint && npm run test",
-    "build": "tsup"
+    "build": "tsdown"
   },
   "repository": {
     "type": "git",
@@ -32,10 +32,8 @@
   "homepage": "https://github.com/grind-t/lib#readme",
   "devDependencies": {
     "@biomejs/biome": "latest",
-    "@microsoft/api-extractor": "latest",
-    "@swc/core": "latest",
     "@types/node": "latest",
-    "tsup": "latest",
+    "tsdown": "latest",
     "typescript": "latest"
   }
 }
