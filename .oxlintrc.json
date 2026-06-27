@@ -5,6 +5,17 @@
     "typeCheck": true
   },
   "rules": {
-    "typescript/no-floating-promises": "off"
+    "typescript/no-floating-promises": [
+      "error",
+      {
+        "allowForKnownSafeCalls": [
+          {
+            "from": "package",
+            "name": ["suite", "test", "describe", "it"],
+            "package": "node:test"
+          }
+        ]
+      }
+    ]
   }
 }
